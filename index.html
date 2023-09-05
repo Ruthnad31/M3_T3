@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+
+function validateForm() {
+  let x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Isikan nama!!");
+    return false;
+  }
+	let y = document.forms["myForm"]["fumur"].value;
+	if (y>=0 && y <=5) {
+		document.getElementById("tampilkan").innerHTML = 'Anda masih bayi';
+		return false;
+  }
+	if (y>=6 && y<=15) {
+		document.getElementById("tampilkan").innerHTML = 'Anda masih anak-anak';
+		return false;
+  }
+  
+	if (y>=16 && y<=30) {
+		document.getElementById("tampilkan").innerHTML = 'Anda masih remaja';
+		return false;
+  }
+  
+	if (y>=31 && y<=60) {
+		document.getElementById("tampilkan").innerHTML = 'Anda sudah dewasa';
+		return false;
+  }
+  
+	if (y>= 61) {
+		document.getElementById("tampilkan").innerHTML = 'Anda sudah dewasa';
+		return false;
+  }
+	else {
+		document.getElementById("tampilkan").innerHTML = 'Anda Game Over';
+		return false;
+  }
+	
+}
+
+
+
+</script>
+</head>
+<body>
+
+<h1>Validasi Input</h1>
+<p>Masukkan nama dan umur anda:</p>
+
+<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+  Nama: <input type="text" name="fname"><br>
+  Umur: <input type="number" name="fumur"><br>
+  
+
+  
+  <input type="submit" value="Klik">
+</form>
+
+<p id="tampilkan"></p>
+
+</body>
+</html>
